@@ -1,14 +1,14 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, theme } from '@chakra-ui/react';
 
 // black 500-900 can be fill later in the future if required
 const colors = {
   brandPrimary: '#feefc3',
-  black: {
+  brand: {
     50: '#f1f3f4',
-    100: '#80868b',
-    200: '#5f6368',
-    300: '#2a69ac',
-    400: '#3c4043',
+    200: '#80868b',
+    400: '#5f6368',
+    600: '#2a69ac',
+    800: '#3c4043',
   },
 };
 
@@ -20,6 +20,23 @@ const fonts = {
   body: `'Google Sans',Roboto,Arial,sans-serif`,
 };
 
-const theme = extendTheme({ colors, fonts });
+const fontSizes = {
+  ...theme.sizes,
+  4.5: '1.125rem', //18px
+  5.5: '1.375rem', //22px
+  fontSizes: theme.fontSizes,
+};
+const styles = {
+  global: (props) => ({
+    'html, body,#root': {
+      height: theme.sizes.full,
+      padding: 0,
+      margin: 0,
+      color: colors.brand[400],
+    },
+  }),
+};
 
-export default theme;
+const customTheme = extendTheme({ styles, colors, fonts, fontSizes });
+
+export default customTheme;
