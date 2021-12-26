@@ -9,7 +9,7 @@ import BookmarkIcon from '../../../components/icons/bookmark';
 import PencilIcon from '../../../components/icons/pencil';
 import ArchiveIcon from '../../../components/icons/archive';
 
-const mockLabels = Array.from({ length: 20 }).map((_, index) => ({
+const mockLabels = Array.from({ length: 10 }).map((_, index) => ({
   label: `Bookmark label ${index + 1}`,
   order: index,
 }));
